@@ -3,8 +3,7 @@ name: GitHub Actions Demo
 on: 
   push:
     branches: [ main ]
-    paths-ignore:
-      - '.github/'
+    paths-ignore: ['.github']
   pull_request:
     # The branches below must be a subset of the branches above
     branches: [ main ]
@@ -28,4 +27,5 @@ jobs:
         run: |
           echo Event: ${{ github.event_name }}
           echo Branch: ${{ github.ref_name }}
+          echo Files:
           find .
